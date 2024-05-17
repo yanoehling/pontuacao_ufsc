@@ -3,7 +3,7 @@ def somatorio(num, lista, recado):
     while True:
         if num == 0:
             break
-        if num >= 64:
+        elif num >= 64:
             lista[6] = 1
             num -= 64
         elif num >= 32:
@@ -21,7 +21,7 @@ def somatorio(num, lista, recado):
         elif num >= 2:
             lista[1] = 1
             num -= 2
-        elif num == 1:
+        else:
             lista[0] = 1
             num -= 1
     xx = str(lista).replace('1', 'X')
@@ -29,11 +29,11 @@ def somatorio(num, lista, recado):
     print(f"{recado}{xx} ({num_original})")
 
 
-a = open("gabarito d2 violeta.txt")
-# a = open("gabarito d2 amarela.txt")
+a = open("gabarito_d2_violeta.txt")
+# a = open("gabarito_d2_amarela.txt")
 gab = a.readlines()
-b = open("yan d2 violeta.txt")
-# b = open("lucas d2 amarela.txt")
+b = open("yan_d2_violeta.txt")
+# b = open("lucas_d2_amarela.txt")
 rsp = b.readlines()
 cont = 0
 pontos = []
@@ -97,7 +97,7 @@ for c, v in enumerate(pontos):
         humanas += v
     elif c <= 29:
         fisica += v
-    elif c <= 39:
+    else:
         quimica += v
 
 print(f"Pontuação Humanas: {humanas.__round__(2)}")

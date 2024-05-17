@@ -3,7 +3,7 @@ def somatorio(num, lista, recado):
     while True:
         if num == 0:
             break
-        if num >= 64:
+        elif num >= 64:
             lista[6] = 1
             num -= 64
         elif num >= 32:
@@ -21,7 +21,7 @@ def somatorio(num, lista, recado):
         elif num >= 2:
             lista[1] = 1
             num -= 2
-        elif num == 1:
+        else:
             lista[0] = 1
             num -= 1
     xx = str(lista).replace('1', 'X')
@@ -29,11 +29,11 @@ def somatorio(num, lista, recado):
     print(f"{recado}{xx} ({num_original})")
 
 
-a = open("gabarito d1 azul.txt")
-# a = open("gabarito d1 amarela.txt")
+a = open("gabarito_d1_azul.txt")
+# a = open("gabarito_d1_amarela.txt")
 gab = a.readlines()
-b = open("yan d1 azul.txt")
-# b = open("lucas d1 amarela.txt")
+b = open("yan_d1_azul.txt")
+# b = open("lucas_d1_amarela.txt")
 rsp = b.readlines()
 cont = 0
 pontos = []
@@ -99,7 +99,7 @@ for c, v in enumerate(pontos):
         seg_lingua += v
     elif c <= 29:
         matematica += v
-    elif c <= 39:
+    else:
         biologia += v
 
 print(f"Pontuação Primeira Língua: {prim_lingua.__round__(2)}")
