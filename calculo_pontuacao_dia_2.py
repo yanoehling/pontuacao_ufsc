@@ -3,37 +3,21 @@ def somatorio(num, lista, recado):
     while True:
         if num == 0:
             break
-        elif num >= 64:
-            lista[6] = 1
-            num -= 64
-        elif num >= 32:
-            lista[5] = 1
-            num -= 32
-        elif num >= 16:
-            lista[4] = 1
-            num -= 16
-        elif num >= 8:
-            lista[3] = 1
-            num -= 8
-        elif num >= 4:
-            lista[2] = 1
-            num -= 4
-        elif num >= 2:
-            lista[1] = 1
-            num -= 2
-        else:
-            lista[0] = 1
-            num -= 1
+        for n in range(6, -1, -1):
+            if num >= 2**n:
+                lista[n] = 1
+                num -= 2**n
+
     xx = str(lista).replace('1', 'X')
     xx = xx.replace("0", "_")
     print(f"{recado}{xx} ({num_original})")
 
 
-a = open("gabarito_d2_violeta.txt")
-# a = open("gabarito_d2_amarela.txt")
+a = open("gabaritos_oficiais\gabarito_d2_violeta.txt")
+# a = open("gabaritos_oficiais\gabarito_d2_amarela.txt")
 gab = a.readlines()
-b = open("yan_d2_violeta.txt")
-# b = open("lucas_d2_amarela.txt")
+b = open("gabaritos_pessoais\yan_d2_violeta.txt")
+# b = open("gabaritos_pessoais\lucas_d2_amarela.txt")
 rsp = b.readlines()
 cont = 0
 pontos = []
